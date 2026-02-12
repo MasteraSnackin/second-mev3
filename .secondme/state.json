@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "stage": "ready",
+  "app_name": "SocialLinker",
+  "modules": ["auth", "profile", "chat", "act"],
+  "config": {
+    "client_id": "cf234a2e-314b-4ca4-ba9d-6e620ccc900c",
+    "client_secret": "e38f770815c50fcf873618cf24f01cdcff8700b846d4e27b55c8966757a47511",
+    "redirect_uri": "http://localhost:3000/api/auth/callback",
+    "redirect_uris": [
+      "http://localhost:3000/api/auth/callback"
+    ],
+    "database_url": "file:./dev.db",
+    "allowed_scopes": ["user.info", "user.info.shades", "chat"]
+  },
+  "api": {
+    "base_url": "https://app.mindos.com/gate/lab",
+    "oauth_url": "https://go.second.me/oauth/",
+    "token_endpoint": "https://app.mindos.com/gate/lab/api/oauth/token/code",
+    "refresh_endpoint": "https://app.mindos.com/gate/lab/api/oauth/token/refresh",
+    "access_token_ttl": 7200,
+    "refresh_token_ttl": 2592000
+  },
+  "docs": {
+    "quickstart": "https://develop-docs.second.me/zh/docs",
+    "oauth2": "https://develop-docs.second.me/zh/docs/authentication/oauth2",
+    "api_reference": "https://develop-docs.second.me/zh/docs/api-reference/secondme",
+    "errors": "https://develop-docs.second.me/zh/docs/errors"
+  },
+  "prd": {
+    "summary": "SocialLinker: A SecondMe-powered networking assistant that helps users connect with others by crafting personalized connection messages using AI, matching people based on shared interests (SecondMe Shades), and classifying networking intents to provide targeted assistance.",
+    "features": [
+      "SecondMe OAuth login with onboarding for new users",
+      "AI-powered message drafting assistant for crafting personalized connection messages",
+      "Intent classification to categorize networking goals (hiring, collaboration, learning, business)",
+      "Interest-based profile dashboard highlighting user's Shades for finding common ground",
+      "Connection insights dashboard tracking drafted messages and conversation history"
+    ],
+    "target_users": "All general users who want to expand their professional/social network (includes both SecondMe users and newcomers to the platform)",
+    "design_preference": "Dark mode with blue/purple gradients, sleek modern AI-powered professional look, smooth professional transitions"
+  }
+}
