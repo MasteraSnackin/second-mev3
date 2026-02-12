@@ -1,10 +1,37 @@
-# SocialLinker - AI驱动的社交连接平台
+# 🌐 SocialLinker - AI驱动的智能社交网络助手
 
-基于 SecondMe 和 Next.js 构建的智能社交连接应用。
+<div align="center">
 
-## 项目概览
+**一款优雅、现代化的社交网络自动化工具,帮助用户精准连接目标受众**
 
-SocialLinker 是一个完整的 Next.js 应用程序,集成了 SecondMe 的 OAuth 认证、用户档案、AI 聊天、消息起草和意图分类功能。
+![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3-38bdf8) ![Prisma](https://img.shields.io/badge/Prisma-7-2d3748)
+
+**✨ 暗黑主题 · 蓝紫渐变 · 流畅动画 · AI 驱动**
+
+</div>
+
+---
+
+## 📖 项目简介
+
+SocialLinker 是一款集成 SecondMe API 的全栈 Web 应用,旨在通过 AI 技术自动化社交网络连接流程。应用采用优雅的暗色主题搭配蓝紫渐变色,提供类似高端 SaaS 工具的用户体验。
+
+### 💡 设计理念
+
+本项目原始构想是构建一个跨平台的社交媒体自动化连接工具(LinkedIn/Twitter),能够:
+- 🎯 **智能搜索**:根据职位、行业、地点等标准搜索目标受众
+- 💬 **自动外联**:生成个性化连接请求和对话
+- 🤖 **多轮对话**:通过 AI 对话筛选潜在联系
+- 📊 **数据分析**:展示连接统计、成功率和对话日志
+
+### ✅ 实际实现
+
+基于合规性和平台政策考虑,我们采用 **SecondMe** 平台作为基础设施,实现了核心功能的合法合规版本:
+- ✅ SecondMe OAuth 安全认证
+- ✅ AI 驱动的消息起草助手
+- ✅ 智能意图分类系统
+- ✅ 用户兴趣匹配功能
+- ✅ 对话历史管理
 
 ## 技术栈
 
