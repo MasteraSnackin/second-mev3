@@ -32,18 +32,18 @@ export interface SecondMeUserInfo {
 export async function exchangeCodeForToken(code: string): Promise<SecondMeTokenResponse> {
   const params = new URLSearchParams({
     grant_type: 'authorization_code',
-    client_id: process.env.SECONDME_CLIENT_ID!,
-    client_secret: process.env.SECONDME_CLIENT_SECRET!,
+    client_id: process.env.SECONDME_CLIENT_ID!.trim(),
+    client_secret: process.env.SECONDME_CLIENT_SECRET!.trim(),
     code,
-    redirect_uri: process.env.SECONDME_REDIRECT_URI!,
+    redirect_uri: process.env.SECONDME_REDIRECT_URI!.trim(),
   });
 
   console.log('Token exchange request:', {
-    endpoint: process.env.SECONDME_TOKEN_ENDPOINT,
-    params: params.toString().replace(process.env.SECONDME_CLIENT_SECRET!, '***'),
+    endpoint: process.env.SECONDME_TOKEN_ENDPOINT?.trim(),
+    params: params.toString().replace(process.env.SECONDME_CLIENT_SECRET!.trim(), '***'),
   });
 
-  const response = await fetch(process.env.SECONDME_TOKEN_ENDPOINT!, {
+  const response = await fetch(process.env.SECONDME_TOKEN_ENDPOINT!.trim(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -67,12 +67,12 @@ export async function exchangeCodeForToken(code: string): Promise<SecondMeTokenR
 export async function refreshAccessToken(refreshToken: string): Promise<SecondMeTokenResponse> {
   const params = new URLSearchParams({
     grant_type: 'refresh_token',
-    client_id: process.env.SECONDME_CLIENT_ID!,
-    client_secret: process.env.SECONDME_CLIENT_SECRET!,
+    client_id: process.env.SECONDME_CLIENT_ID!.trim(),
+    client_secret: process.env.SECONDME_CLIENT_SECRET!.trim(),
     refresh_token: refreshToken,
   });
 
-  const response = await fetch(process.env.SECONDME_REFRESH_ENDPOINT!, {
+  const response = await fetch(process.env.SECONDME_REFRESH_ENDPOINT!.trim(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -91,7 +91,7 @@ export async function refreshAccessToken(refreshToken: string): Promise<SecondMe
  * Fetch user info from SecondMe API
  */
 export async function fetchUserInfo(accessToken: string): Promise<SecondMeUserInfo> {
-  const url = `${process.env.SECONDME_API_BASE_URL}/api/secondme/user/info`;
+  const url = `${process.env.SECONDME_API_BASE_URL?.trim()}/api/secondme/user/info`;
 
   console.log('Fetching user info:', { url, hasToken: !!accessToken });
 
