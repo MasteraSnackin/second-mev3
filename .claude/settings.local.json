@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(/plugin marketplace add:*)",
-      "Bash(npx skills add:*)"
+      "Bash(npx skills add:*)",
+      "Bash(git add:*)"
     ]
   }
 }
